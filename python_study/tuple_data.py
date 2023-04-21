@@ -240,7 +240,7 @@ print("\n")
 ### 해설
 print("실습하기 3 - 해설1: for")
 n = int(input("정수:"))
-for i in range(1, n+1):   # 1 ~ m
+for i in range(1, n+1):   # 1 ~ n
     if n % i == 0:
         print(i)
 print("\n")
