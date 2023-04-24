@@ -15,7 +15,7 @@
 
 # print("딕셔너리 자료형 연습2")
 # dict_1={1:'a'}
-# dict_1['b']=2  # kee-value 쌍 추가
+# dict_1['b']=2  # key-value 쌍 추가
 # print(dict_1)
 # print("\n")
 
