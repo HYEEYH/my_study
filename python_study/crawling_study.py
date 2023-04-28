@@ -1,0 +1,240 @@
+# 4월 28일 3~4 -------------------------------------------------------------------------
+
+
+# 데이터 크롤링
+# 데이터 수집단계에서 쓰임
+# 테이터 수집 -> 데이터 분석/처리 -> 인공지능 모델 학습 -> 인공지능 모델 평가 -> 사용
+
+
+# 크롤링을 위해 알아야 할 것들:
+
+# http  
+# hypertext transfer protocol - protocol(약속, 규약)
+# request(요청) - response(응답) 로 구성
+# client(웹브라우저) - server(서버)
+# response(응답) 안에 html이 들어있음.
+
+# html 파싱
+# html : hypertext markup language
+# 웹 사이트를 표현하기 위한 언어
+# <html></html>
+# 태그와 태그로 데이터 내용을 표현
+# html 소스 중 원하는 데이터만 뽑아내서 쓸 수 있다.
+
+print("크롤링 해보기")
+# import requests
+
+# url = "https://www.naver.com/"
+# response = requests.get(url)
+# status = response.status_code
+# html = response.text
+
+# print(status)
+# print(html)
+
+print("\n")
+
+
+# http 상태 코드
+# 200 : ok. 요청 성공
+# 302 : 리다이렉트. 다른페이지로 다로 연결
+# 400 : Bad Request.  요청이 잘못됨
+# 401 : Unauthorized. 비인증
+# 403 : Forbidden. 접근 권한 없음
+# 404 : Not Found. 요청받은 것에 대한 내용이 없음
+# 405 : Method Not Allowed 접근 방법이 잘못됨
+# 500 : Internal Server Error. 서버 에러(보통 개발자가 잘못 개발함)
+# 501 : Not Implemented. 개발중인 페이지
+# 502 : Bad Gateway. 잘못된 응답을 보냈다(보통 서버 운영프로그램에 문제)
+
+# url의 구조
+# 프로토콜://호스트주소:포트번호/경로?쿼리
+# http://naver.com/?~~~~~~
+# 쿼리
+# 경로하고 다르게 추가적인 데이터를 포함시킬때 쿼리 사용.
+# 쿼리의 구조 : 쿼리이름=값&쿼리이름=값&쿼리이름=값
+#                                경로   /(물음표뒤에서부터)쿼리~  
+# https://search.naver.com/search.naver?where=image&sm=tab_jum&query=%EC%B9%98%ED%82%A8
+
+print("쿼리 사용 해보기")     # +++++++++++++ 뭐야... 모르겠는데?? 
+# import requests
+# search_url = "https://search.naver.com/search.naver?where=image&sm=tab_jum&query="
+# keyword = "맥주"
+# url = search_url + keyword
+# response = requests.get(url)
+# print(response.text)
+# # print(type(response.text))
+print("\n")
+
+
+
+
+
+
+
+
+
+
+
+# 4월 28일 4 ~ 5 -------------------------------------------------------------------------
+
+# BeautifulSoup
+# html 파싱(parsing)
+# html을 객체 구조화 해서 사용하기 위해서 사용
+# html 태그 : 
+# <태그이름 속성=속성값>내용</태그이름>
+# html를 객체처럼 쓸 수 있게 해줌.
+
+print("BeautifulSoup 사용 해보기")  # +++++++++++++++++++++++++++++++++++++ 전혀 모르겠다. 따라썼는데도 오류남. 왠지모르겠어...
+
+# from bs4 import BeautifulSoup
+
+# html = "<html><body>Hello</body></html>"  # 그냥 문자열 아니고 파싱된 형태로 들어감.
+# soup = BeautifulSoup(html, "html.parser")  #(앞, 뒤(=앞에있는 애를 어떻게 파싱에서 써줄건지))
+# print(soup)
+# print(type(soup))
+
+# # 바디 태그만 꺼내기 
+# print(soup.body)
+# print(type(soup.body))
+
+# # 문자만 꺼내기
+
+# print(soup.body.text)
+# print(type(soup.body.text))
+
+
+
+
+
+
+
+
+
+
+# 4월 28일 5 ~ 6 -------------------------------------------------------------------------
+
+# ========================================= 한세트
+
+# import requests
+# from bs4 import BeautifulSoup
+# search_url = "https://www.google.com/search?tbm=isch&q="       # 검색하는 주소로 요청
+# keyword = "맥주"
+# url = search_url + keyword       
+# response = requests.get(url)               # 검색결과 = 검색주소에 대한 요청이 돌아옴. (결과 달라고 요청 보냄)
+# # print(response.text)
+# # print(type(response.text))
+
+# html = response.text
+# soup = BeautifulSoup(html, "html.parser")
+# # print(soup.find_all('div')[4])
+# # print(soup.body.div)
+
+# # 원하는 특정 이미지만 가져오기
+# imgs = soup.find_all('img')
+# # print(imgs)
+
+# img = imgs[1]
+# # print(img)
+# # print(img["src"])                        # 링크 주소만 가져오기
+
+
+# # 1. 원하는 특정 이미지 다 가져오기
+# import os                                  # 3. 저장한 이미지 데이터를 사람도 알아볼 수 있게 이미지형태로 피씨에 저장
+# folder_name = "imgs"
+# if not os.path.exists(folder_name):        # 폴더가 존재하지 않는다면 폴더를 만들어라
+#     os.mkdir(folder_name)
+
+# # for img in imgs[1:]:
+# #     # print(img['src'])
+
+# #     # 2. 원하는 특정 이미지 가져온거 저장하기
+# #     file_name = "img.jpg"                                 # 4.
+# #     file_path = os.path.join(folder_name, file_name)      # 4.
+# #     img_response = requests.get(img['src'])
+# #     img_data = img_response.content
+
+# #     with open(file_path, "wb") as f:                      # 5. 파일이름이 img.jpg 한개밖에 없어서 계속 덮어씌워짐. 이름을 바꿔주려면?
+# #         f.write(img_data)
+# #     # print(img_data)
+
+
+# # enumerate(이터러블)                    # 6. 이터러블 써주기
+
+# for idx, img in enumerate(imgs[1:]):
+#     print(idx, "번째 이미지 저장")
+#     file_name = f"img_{idx}.jpg"                                 
+#     file_path = os.path.join(folder_name, file_name)     
+#     img_response = requests.get(img['src'])
+#     img_data = img_response.content
+
+#     with open(file_path, "wb") as f:                      
+#         f.write(img_data)
+
+# print("\n")
+
+# ========================================= 한세트
+
+# enumerate(이터러블) : 자동적으로 인덱스를 앞에 붙여줌
+# li1 = ["김연아", "류현진", "손흥민"]
+# for idx, name in enumerate(li1):
+#     print(name)
+
+# (참고)셀레니움. 브라우저를 빌려서 크롤링 할 수 있게 도와주는
+
+
+
+
+
+
+
+
+
+
+# 4월 28일 7 -------------------------------------------------------------------------
+
+
+# 네이버 it/과학 뉴스 크롤링 - 뉴스기사 가져와보기
+
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=105"
+
+response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}) 
+    # response = requests.get() : 요청하고, 요청한 자료 리스폰스에 저장하기
+    # headers={"User-Agent": "Mozilla/5.0"} : 크롤링 방지 기능 회피하기 위해 쓰는 코드.
+html = response.text                                            # 1 연결 잘 되는지 테스트
+soup = BeautifulSoup(html, "html.parser")                       # 2 html을 객체화
+div = soup.body.find('div', attrs={'class': 'list_body'})       # 3 attrs={}) : 속성   속성 가지고있는 애들 출력
+headlines = div.find_all('a', attrs={'class': 'cluster_text_headline'})   # 4 헤드라인 에서 a 태그 가지고 있는 애들 출력./ attrs=: 굵은글씨만
+
+
+        ## 문3) 위 헤드라인 뉴스들을 텍스트 파일 만들어서 새 파일로 저장해보기.
+        ##      파일이름 : crawling_result 폴더의 headlines.txt 파일에 저장
+
+import os                                                       # 1@
+folder_name = "crawling_result"
+if not os.path.exists(folder_name):
+    os.mkdir(folder_name)
+
+
+
+for headline in headlines:                                      # 5 a태그 가진애들 중 텍스트만 뽑아오기. 근데 공백있음. 사진있었던부분
+    print(headline.text.strip())  
+    # with open("crawling_result/headlines.txt", "a", encoding="utf-8") as f:        # 파일은 만드나 폴더는 못만드므로 os임포트 해서 폴더 만들고 해야함(1@로)
+    with open("crawling_result/headlines.txt", "a", encoding="utf-8") as f:
+        f.write(headline.text.strip())
+        f.write("\n")
+    article_response = requests.get(headline['href'])                           # 여기서부터는 기사 내용도 가져오기.
+    article_soup = BeautifulSoup(article_response.text, "html.parser")
+    article = article_soup.find('div', attrs={"id": "dic_area"})
+    print(article.text)
+
+
+
+
+
+
+
+
