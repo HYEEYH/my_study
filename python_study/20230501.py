@@ -75,7 +75,7 @@ print("\n")
 print("연습 문제 4")
 # sum = 0
 # for i in range(1,11):
-#     sum = sum+1
+#     sum = sum+i
 # print(sum)
 print("\n")
 
