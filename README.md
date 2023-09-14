@@ -2,7 +2,7 @@
 
 - 공부한 내용을 정리하는 공간.
 
- <div align=center>
+<div align=center>
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=HYEEYH&layout=compact)](https://github.com/HYEEYH/github-readme-stats)
 
 # 사용 툴
