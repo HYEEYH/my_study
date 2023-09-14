@@ -1,3 +1,10 @@
+![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=My%20Study&fontSize=70)
+
+- 공부한 내용을 정리하는 공간.
+- 사용 툴
+ <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/>
+ <img src="https://img.shields.io/badge/Android Studio-3DDC84?style=flat&logo=androidstudio&logoColor=white"/>
+
 # my_study
 연희직업전문학교 수업내용 정리
 ## Python study
