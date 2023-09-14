@@ -1,6 +1,9 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=My%20Study&fontSize=70)
 
 - 공부한 내용을 정리하는 공간.
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=HYEEYH&layout=compact)](https://github.com/HYEEYH/github-readme-stats)
+
 # 사용 툴
 <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white"/>
 <img src="https://img.shields.io/badge/Google Colab-F9AB00?style=flat&logo=googlecolab&logoColor=white"/>
