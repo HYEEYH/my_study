@@ -2,6 +2,7 @@
 
 - 공부한 내용을 정리하는 공간.
 
+ <div align=center>
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=HYEEYH&layout=compact)](https://github.com/HYEEYH/github-readme-stats)
 
 # 사용 툴
@@ -16,7 +17,7 @@
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=white"/>
 
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white"/>
-
+</div>
 
 # my_study
 연희직업전문학교 수업내용 정리
